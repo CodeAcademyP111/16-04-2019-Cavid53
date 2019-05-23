@@ -36,7 +36,7 @@
 // console.log(datas[2][2]);
 
 // Object
-var person = {
+const person = {
     name: "Musviq",
     surname: "Agayev",
     age: 28,
@@ -46,7 +46,7 @@ var person = {
 };
 
 
-var persons = [{
+const persons = [{
         name: "Musviq",
         surname: "Agayev",
         age: 28,
@@ -71,23 +71,18 @@ var persons = [{
 // Function
 
 function calcProductChangeRate(productPrice, changeRate) {
-    if (productPrice == undefined || changeRate == undefined) {
+    if (productPrice < 0 || productPrice == undefined || changeRate == undefined) {
         return -1;
     }
 
-    if (productPrice < 0) {
-        return -1;
-    }
-
-    var price = 0;
+    let price = 0;
 
     if (changeRate < 0) {
         price = productPrice - (productPrice * (changeRate * -1) / 100)
     } else {
         price = productPrice + (productPrice * changeRate / 100)
     }
-
-
+    
     return price;
 }
 
